@@ -1,0 +1,34 @@
+@startuml
+
+start
+
+: size = 11 ]
+note right: const int size = 11
+: arr[size] = {0.0} ]
+note right: float массив с последовательностью
+: calc = 0.0 ]
+note right: float переменная хранящая расчет каждого i-того элемента
+: i = 0 ]
+note right: int счетчик для перебора массива
+
+while (i < size) is (да)
+	: arr[i] <
+	note right: Пользовательский ввод данных
+	: i = i + 1 ]
+endwhile (нет)
+
+: i = 0 ]
+
+while (i < size) is (да)
+	: calc = sqrt(fabs(arr[i])) + 5 * pow(arr[i], 3) |
+	note right: Расчет каждого i-того элемента
+	if (calc > 400) then (да)
+		: Результат превышает 400 >
+		note right: Уведомить пользователя
+	endif
+	: i = i + 1 ]
+endwhile (нет)
+
+stop
+
+@enduml
