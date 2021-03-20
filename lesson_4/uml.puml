@@ -17,16 +17,14 @@ while (i < size) is (да)
 	: i = i + 1 ]
 endwhile (нет)
 
-: i = 0 ]
-
-while (i < size) is (да)
+while (i >= 0) is (да)
 	: calc = sqrt(fabs(arr[i])) + 5 * pow(arr[i], 3) |
 	note right: Расчет каждого i-того элемента
 	if (calc > 400) then (да)
 		: Результат превышает 400 >
 		note right: Уведомить пользователя
 	endif
-	: i = i + 1 ]
+	: i = i - 1 ]
 endwhile (нет)
 
 stop

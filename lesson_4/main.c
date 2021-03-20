@@ -37,7 +37,7 @@ void exercise2()
 		scanf("%f", &arr[i]);
 	}
 	
-	for (int i = 0; i < size; i++)
+	for (int i = size - 1; i >= 0; i--)
 	{
 		calc = sqrt(fabs(arr[i])) + 5 * pow(arr[i], 3);
 
