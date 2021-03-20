@@ -4,6 +4,7 @@
 void fillRandom(const int, const int, int [][0], const int);
 void printIntArray(const int, const int, int [][0]);
 void bubbleSort(const int, const int, int [][0]);
-void swap(int *, int *);
+void swapInt(int *, int *);
+void swapFloat(float *a, float *b);
 
 #endif

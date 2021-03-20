@@ -2,9 +2,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void swap(int *a, int *b)
+void swapInt(int *a, int *b)
 {
 	int t = *a;
+	*a = *b;
+	*b = t;
+}
+
+void swapFloat(float *a, float *b)
+{
+	float t = *a;
 	*a = *b;
 	*b = t;
 }
@@ -19,7 +26,7 @@ void bubbleSort(const int row, const int col, int array[][col])
 					continue;
 
 				if (array[i][j] > array[i][j + 1])
-					swap(&array[i][j], &array[i][j + 1]);
+					swapInt(&array[i][j], &array[i][j + 1]);
 			}
 }
 

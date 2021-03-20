@@ -37,7 +37,20 @@ void exercise2()
 		scanf("%f", &arr[i]);
 	}
 	
+	// ИНВЕРТИРОВАНИЕ ПРИ ВЫВОДЕ
 	for (int i = size - 1; i >= 0; i--)
+	{
+		calc = sqrt(fabs(arr[i])) + 5 * pow(arr[i], 3);
+
+		if (calc > 400)
+			printf("Расчет числа №%d превышает 400\n", i + 1);
+	}
+
+	// ИНВЕРТИРОВАНИЕ МАССИВА
+	for (int i = 0; i < size / 2; i++)
+		swapFloat(&arr[i], &arr[size - i - 1]);
+
+	for (int i = 0; i < size; i++)
 	{
 		calc = sqrt(fabs(arr[i])) + 5 * pow(arr[i], 3);
 
