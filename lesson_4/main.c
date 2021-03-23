@@ -8,15 +8,15 @@ void exercise2();
 int main(const int argc, const char **argv)
 {
 	exercise1();
-	exercise2();
+//	exercise2();
 
 	return 0;
 }
 
 void exercise1()
 {
-	const int sizeX = 3;
-	const int sizeY = 3;
+	const int sizeX = 5;
+	const int sizeY = 5;
 	int arr[sizeX][sizeY];
 	fillRandom(sizeX, sizeY, arr, 50);
 	printf("Исходный массив:\n");
