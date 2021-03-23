@@ -15,7 +15,7 @@ int main(const int argc, const char **argv)
 
 void exercise1()
 {
-	const int sizeX = 4;
+	const int sizeX = 3;
 	const int sizeY = 3;
 	int arr[sizeX][sizeY];
 	fillRandom(sizeX, sizeY, arr, 50);

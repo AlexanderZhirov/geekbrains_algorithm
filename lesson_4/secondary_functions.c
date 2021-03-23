@@ -20,13 +20,13 @@ void bubbleSort(const int row, const int col, int array[][col])
 {
 	for (int i = 0; i < (row * col - 1); ++i)
 		for (int i = 0; i < row; ++i)
-			for (int j = 0; j < col; ++j)
+			for (int j = 1; j <= col; ++j)
 			{
-				if (i == (row - 1) && j == (col - 1))
+				if (i == (row - 1) && j == col)
 					continue;
 
-				if (array[i][j] > array[i][j + 1])
-					swapInt(&array[i][j], &array[i][j + 1]);
+				if (array[i][j - 1] > array[i][j])
+					swapInt(&array[i][j - 1], &array[i][j]);
 			}
 }
 
