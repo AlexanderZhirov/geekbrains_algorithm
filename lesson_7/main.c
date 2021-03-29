@@ -34,29 +34,37 @@ void exercise_2_3()
 	ins(lst1, 123);
 	ins(lst1, 653);
 	ins(lst1, 947);
+	printf("Печать первого списка после добваления в него элементов:\n");
 	printList(lst1);
 
 	List *lst2 = copy(lst1);
+	printf("Печать второго списка после копирования:\n");
 	printList(lst2);
 	printf("%s - ", checkSort(lst2) ? "true" : "false");
 	printListMessage();
 	ins(lst2, 453);
+	printf("Печать второго списка после добваления в него элементов:\n");
 	printList(lst2);
 	printf("%s - ", checkSort(lst2) ? "true" : "false");
 	printListMessage();
 
 	free(rm(lst1, 123));
+	printf("Печать первого списка после удаления из него элементов:\n");
 	printList(lst1);
+	printf("Печать второго списка:\n");
 	printList(lst2);
 
 	free(rm(lst2, 947));
+	printf("Печать первого списка:\n");
 	printList(lst1);
+	printf("Печать второго списка после удаления из него элементов:\n");
 	printList(lst2);
 
 	free(rm(lst2, 123));
 	free(rm(lst2, 653));
 	ins(lst2, 452);
 	ins(lst2, 321);
+	printf("Печать второго списка после удаления/добавления в него элементов:\n");
 	printList(lst2);
 	printf("%s - ", checkSort(lst2) ? "true" : "false");
 	printListMessage();
