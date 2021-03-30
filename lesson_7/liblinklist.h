@@ -31,6 +31,7 @@ void ins(List *, int);
 Node *rm(List *, int);
 
 List *copy(List *);
+void copy2(List *, List *);
 
 void printNode(Node *);
 void printList(List *);

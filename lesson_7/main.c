@@ -69,6 +69,10 @@ void exercise_2_3()
 	printf("%s - ", checkSort(lst2) ? "true" : "false");
 	printListMessage();
 
+	copy2(lst1, lst2);
+	printf("Печать второго списка после копирования в него элементов из первого списка:\n");
+	printList(lst2);
+
 	freeList(lst1);
 	freeList(lst2);
 }

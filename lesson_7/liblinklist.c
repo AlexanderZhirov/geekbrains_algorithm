@@ -123,6 +123,22 @@ List *copy(List *lst)
 	return newLst;
 }
 
+void copy2(List *lstFrom, List *lstTo)
+{
+	lstTo->size += lstFrom->size;
+	Node **head = &(lstTo->head);
+
+	while (*head)
+		head = &((*head)->next);
+
+	for (Node *node = lstFrom->head; node != NULL; node = node->next, head = &((*head)->next))
+	{
+		Node *new = (Node *)malloc(sizeof(Node));
+		new->dat = node->dat;
+		*head = new;
+	}
+}
+
 bool checkSort(List *lst)
 {
 	int tmp;       // Предыдущее сравниваемое значение
