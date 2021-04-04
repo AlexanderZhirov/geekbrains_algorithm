@@ -38,7 +38,10 @@ bool isBalanced(BinTreeIntNode *root)
 		}
 
 		if (ABS(maxLevel - minLevel) > 1)
+		{
+			freeList(list);
 			return false;
+		}
 		level++;
 	}
 	freeList(list);
