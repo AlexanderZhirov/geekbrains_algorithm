@@ -2,54 +2,106 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-List *initList()
+tQueue *initTQ()
 {
-	List *lst = (List *)malloc(sizeof(List));
-	lst->head = NULL;
-	lst->size = 0;
-	return lst;
+    tQueue *queue = (tQueue *)malloc(sizeof(tQueue));
+    queue->head = NULL;
+    queue->size = 0;
+    return queue;
 }
 
-void addNode(List *lst, T data)
+void addTN(tQueue *queue, BinTreeIntNode *data)
 {
-	lNode *new = (lNode *)malloc(sizeof(lNode));
-	new->dat = data;
-	new->next = NULL;
+    tNode *new = (tNode *)malloc(sizeof(tNode));
+    new->dat = data;
+    new->next = NULL;
 
-	lNode *current = lst->head;
-	if (current == NULL)
-	{
-		lst->head = new;
-		lst->size++;
-		return;
-	}
-	else
-	{
-		while (current->next != NULL)
-			current = current->next;
-		current->next = new;
-		lst->size++;
-	}
+    tNode *current = queue->head;
+    if (current == NULL)
+    {
+        queue->head = new;
+        queue->size++;
+        return;
+    }
+    else
+    {
+        while (current->next != NULL)
+            current = current->next;
+        current->next = new;
+        queue->size++;
+    }
 }
 
-T rmNode(List *lst)
+BinTreeIntNode *rmTN(tQueue *queue)
 {
-	if (lst->head == NULL)
-		return NULL;
+    if (queue->head == NULL)
+        return NULL;
 
-	T dat = lst->head->dat;
-	lNode *current = lst->head;
-	lst->head = current->next;
-	lst->size--;
+    BinTreeIntNode *dat = queue->head->dat;
+    tNode *current = queue->head;
+    queue->head = current->next;
+    queue->size--;
 
-	free(current);
+    free(current);
 
-	return dat;
+    return dat;
 }
 
-void freeList(List *lst)
+void freeTQ(tQueue *queue)
 {
-	while (lst->size)
-		rmNode(lst);
-	free(lst);
+    while (queue->size)
+        rmTN(queue);
+    free(queue);
+}
+
+iQueue *initIQ()
+{
+    iQueue *queue = (iQueue *)malloc(sizeof(iQueue));
+    queue->head = NULL;
+    queue->size = 0;
+    return queue;
+}
+
+void addIN(iQueue *queue, int data)
+{
+    iNode *new = (iNode *)malloc(sizeof(iNode));
+    new->dat = data;
+    new->next = NULL;
+
+    iNode *current = queue->head;
+    if (current == NULL)
+    {
+        queue->head = new;
+        queue->size++;
+        return;
+    }
+    else
+    {
+        while (current->next != NULL)
+            current = current->next;
+        current->next = new;
+        queue->size++;
+    }
+}
+
+int rmIN(iQueue *queue)
+{
+    if (queue->head == NULL)
+        return -1;
+
+    int dat = queue->head->dat;
+    iNode *current = queue->head;
+    queue->head = current->next;
+    queue->size--;
+
+    free(current);
+
+    return dat;
+}
+
+void freeIQ(iQueue *queue)
+{
+    while (queue->size)
+        rmIN(queue);
+    free(queue);
 }

@@ -4,23 +4,38 @@
 #include <stdbool.h>
 #include "libtree.h"
 
-#define T BinTreeIntNode *
-
-typedef struct lNode
+typedef struct tNode
 {
-	T dat;
-	struct lNode *next;
-} lNode;
+    BinTreeIntNode *dat;
+    struct tNode *next;
+} tNode;
 
 typedef struct
 {
-	lNode *head;
-	int size;
-} List;
+    tNode *head;
+    int size;
+} tQueue;
 
-List *initList();
-void addNode(List *, T);
-T rmNode(List *);
-void freeList(List *);
+typedef struct iNode
+{
+    int dat;
+    struct iNode *next;
+} iNode;
+
+typedef struct
+{
+    iNode *head;
+    int size;
+} iQueue;
+
+tQueue *initTQ();
+void addTN(tQueue *, BinTreeIntNode *);
+BinTreeIntNode *rmTN(tQueue *);
+void freeTQ(tQueue *);
+
+iQueue *initIQ();
+void addIN(iQueue *, int);
+int rmIN(iQueue *);
+void freeIQ(iQueue *);
 
 #endif
