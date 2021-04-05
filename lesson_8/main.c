@@ -43,7 +43,7 @@ void exercise_2_3()
 
 	const int size = 10;                  // Размер массива деревьев
 	const int border = 100;               // Граница рандомных чисел
-	const int nodes = 18;                 // Количество узлов в дереве
+	const int nodes = 12;                 // Количество узлов в дереве
 
 	int countBalance = 0;                 // Счётчик сбалансированных деревьев
 
