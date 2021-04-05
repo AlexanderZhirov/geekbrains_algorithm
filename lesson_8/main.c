@@ -9,7 +9,7 @@ void exercise_2_3();
 
 int main(const int argc, const char **argv)
 {
-//	exercise_1();
+	exercise_1();
 	exercise_2_3();
 
 	return 0;

@@ -23,8 +23,8 @@ bool isBalanced(BinTreeIntNode *root)
         return true;
 
     int level = 1;                                                // текущий уровень ветви
-    int minLevel = INT_MAX;                                       // минимальный уровень ветви
-    int maxLevel = INT_MIN;                                       // максимальнй уровень ветви
+    int minLevel = 0;                                             // минимальный уровень ветви
+    int maxLevel = 0;                                             // максимальнй уровень ветви
     int count = 0;                                                // количество итераций на текущем уровне
 
     tQueue *qT = initTQ();                                        // очередь для вершин
@@ -58,15 +58,17 @@ bool isBalanced(BinTreeIntNode *root)
 			{
 				addTN(qT, cNode->left);                           // добавление левой ветви в очередь
 				addIN(qI, ++height);                              // добавление для левой ветви высоты в очередь
+				minLevel++;
 			}
 			else if (cNode->right)                                // если у вершины в наличии правая ветвь - высота == +1
 			{
 				addTN(qT, cNode->right);                          // добавление правой ветви в очередь
 				addIN(qI, ++height);                              // добавление для правой ветви высоты в очередь
+				minLevel++;
 			}
 			else
 			{
-				if (minLevel > level)                             // установка минимального уровня ветви
+				if (ABS(level - minLevel) == 1)                   // установка минимального уровня ветви
 					minLevel = level;
 				if (maxLevel < level)                             // установка максимального уровня ветви
 					maxLevel = level;
