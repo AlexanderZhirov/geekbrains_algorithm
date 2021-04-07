@@ -103,26 +103,6 @@ void adjacencyCount(int** matrix, const int size, bool isOriented)
 	freeStack(stack);
 }
 
-void traversalCount2(int **matrix, int start, const int size, int *visitedDepth)
-{
-	if (!visitedDepth)
-	{
-		visitedDepth = (int *)malloc(sizeof(int) * size);
-		clearArray(visitedDepth, size);
-	}
-
-	printf("%d ", start);
-
-	for (int i = 0; i < size; ++i)
-	{
-		if (matrix[i][start] && !visitedDepth[i])
-		{
-			visitedDepth[start]++;
-			traversalCount2(matrix, i, size, visitedDepth);
-		}
-	}
-}
-
 void traversalCount(int **matrix, int start, const int size, int *visitedDepth)
 {
 	if (!visitedDepth)
@@ -174,19 +154,3 @@ void traversalCount(int **matrix, int start, const int size, int *visitedDepth)
 		startVertex = -1;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
