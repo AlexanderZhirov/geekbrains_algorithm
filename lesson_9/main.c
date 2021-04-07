@@ -1,9 +1,5 @@
 #include <stdio.h>
 #include "libarray.h"
-//#include "lib_9_2.h"
-//#include "lib_9_3.h"
-//#include "lib_9_4.h"
-//#include "lib_9_5.h"
 #include "libhw.h"
 
 void exrcise_1();
@@ -23,6 +19,7 @@ void exrcise_1()
 {
 	const int SZ = 6;
 	int **adjacency = init2dIntArray(SZ, SZ);
+
 	set2dInt(adjacency, 0, 1, 1);
 	set2dInt(adjacency, 0, 2, 1);
 	set2dInt(adjacency, 1, 3, 1);
@@ -104,6 +101,7 @@ void exrcise_2_2()
 {
 	const int SZ = 6;
 	int **adjacency = init2dIntArray(SZ, SZ);
+
 	set2dInt(adjacency, 0, 1, 1);
 	set2dInt(adjacency, 0, 2, 1);
 	set2dInt(adjacency, 0, 3, 1);
@@ -128,4 +126,8 @@ void exrcise_2_2()
 
 	printf("\nПодсчёт смежных вершин со стартовой вершины 5:\n");
 	traversalCount(adjacency, 5, SZ, NULL);
+	printf("\nПодсчёт смежных вершин со стартовой вершины 0:\n");
+	traversalCount(adjacency, 0, SZ, NULL);
+	printf("\nПодсчёт смежных вершин со стартовой вершины 1:\n");
+	traversalCount(adjacency, 1, SZ, NULL);
 }

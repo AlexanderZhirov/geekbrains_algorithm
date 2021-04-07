@@ -136,13 +136,13 @@ void traversalCount(int **matrix, int start, const int size, int *visitedDepth)
 	else
 		visitedDepth[start]++;
 
-	static int startVertex;
+	static int startVertex = -1;
 
 	int count = 0;
 	bool adjacentVertex = false;
 	Stack *stack = init();
 
-	if (!startVertex)
+	if (startVertex == -1)
 		startVertex = start;
 
 	for (int i = 0; i < size; ++i)
@@ -169,7 +169,10 @@ void traversalCount(int **matrix, int start, const int size, int *visitedDepth)
 	freeStack(stack);
 
 	if (startVertex == start)
+	{
 		free(visitedDepth);
+		startVertex = -1;
+	}
 }
 
 
