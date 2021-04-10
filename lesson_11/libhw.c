@@ -1,6 +1,5 @@
 #include "libhw.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 char *caesar(char *in, int key, bool encrypt)
 {

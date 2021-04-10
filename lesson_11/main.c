@@ -46,7 +46,7 @@ void exercise_2()
 	char key[] = "ENCRYPT";
 	char *encrypted, *decrypted;
 
-	printf("Шифрование и расшифровка перестановками:\n");
+	printf("\nШифрование и расшифровка перестановками:\n");
 	printf("Исходный текст: %s\n", string);
 	encrypted = shuffle(string, key, true);
 	printf("Зашифрованный текст: %s\n", encrypted);
